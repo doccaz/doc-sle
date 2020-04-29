@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+  <!ENTITY productnamearch "<phrase xmlns='http://docbook.org/ns/docbook' role='productname'><phrase os='sles'>&sls; for &arm;</phrase></phrase>">
+  <!ENTITY appliancename "&productnamearch; for the &rpi;">
+  <!ENTITY jeos-firstboot "&jeos; First Boot Assistant">  
+]>
+
+<chapter version="5.0" role="General" 
+  xml:id="cha-rpi-configuration"
+  xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>The &rpi; installation</title>
+ <info>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker></dm:bugtracker>
+   <dm:translation>yes</dm:translation>
+  </dm:docmanager>
+ </info>
+
+ <sect1 xml:id="sec-rpi-configuration">
+  <title>Initial System Configuration</title>
+
+  <para>
+   In this section it is explained how to perform the initial system
+   configuration for &appliancename; &productnumber;.
+  </para>
+
+  <sect2 xml:id="sec-rpi-locale">
+   <title>Changing the Language</title>
+   <para>
+    Follow these steps to change the default language:
+   </para>
+   <procedure xml:id="pro-rpi-locale-localectl">
+    <step>
+     <para>
+      Install <literal>glibc-locale</literal> package:
+     </para>
+     <screen>&prompt.root;zypper in glibc-locale</screen>
+    </step>
+    <step>
+     <para>
+      Set the language as desired:
+     </para>
+     <screen>&prompt.root;localectl set-locale LANG=<replaceable>de_DE.UTF-8</replaceable></screen>
+    </step>
+   </procedure>
+   <note>
+    <title>Translation Packages</title>
+    <para>
+     Certain applications may require to install an additional <literal>-lang</literal> package
+     before you can see texts translated to the chosen language.
+    </para>
+   </note>
+  </sect2>
+
+  <sect2 xml:id="sec-rpi-hostname">
+   <title>Changing the Host Name</title>
+   <para>
+    Follow these steps to change the default host name:
+   </para>
+   <procedure xml:id="pro-rpi-hostname-yast">
+    <step>
+     <para>
+      Open the &yast; network module either by running <command>yast2
+      lan</command> or clicking the network icon in the &yast; control center.
+     </para>
+    </step>
+    <step>
+     <para>
+      Select <guimenu>Hostname/DNS</guimenu> in the top tab bar.
+     </para>
+    </step>
+    <step>
+     <para>
+      Type the new host name into the <guimenu>Hostname</guimenu> field.
+     </para>
+    </step>
+    <step>
+     <para>
+      Click <guimenu>OK</guimenu> to save the change. After &yast; exits, you
+      need to log out and in again.
+     </para>
+    </step>
+   </procedure>
+  </sect2>
+
+  <sect2 xml:id="sec-rpi-network">
+   <title>Setting up Networking</title>
+   <para>
+    The default configuration has DHCP enabled on the Ethernet port. If that
+    suits your network environment, you can skip this section. If you require
+    the use of a static IP address, use &yast;:
+   </para>
+   <procedure xml:id="pro-rpi-network-yast">
+    <step>
+     <para>
+      Open the &yast; network module either by running <command>yast2
+      lan</command> or clicking the network icon in the &yast; control center.
+     </para>
+    </step>
+    <step>
+     <para>
+      In &yast;, you will see the network interface being selected. Select the
+      built-in Ethernet and choose <guimenu>Edit</guimenu> to open the address
+      configuration.
+     </para>
+    </step>
+    <step>
+     <para>
+      Select <guimenu>Statically Assigned IP Address</guimenu> and type in the
+      desired values for <guimenu>IP Address</guimenu> and <guimenu>Subnet
+      Mask</guimenu>. Click <guimenu>Next</guimenu>.
+     </para>
+    </step>
+    <step>
+     <para>
+      With a static network configuration, you will also need to specify a DNS
+      server (if applicable) and a gateway. For the gateway, select
+      <guimenu>Routing</guimenu> in the tab bar and enter the IPs of the
+      gateways into the specific fields.
+     </para>
+    </step>
+    <step>
+     <para>
+      The DNS server is set in the <guimenu>Hostname/DNS</guimenu> tab. After
+      choosing that tab, enter the IPs of the name servers into the respective
+      <guimenu>Name Server</guimenu> fields.
+     </para>
+    </step>
+   </procedure>
+   <para>
+    Similarly to the procedure described above, &yast; also lets you configure
+    the built-in Wi-Fi network adapter.
+   </para>
+   <para>
+    For detailed information about the network configuration in
+    &productnamearch;, consult the respective sections of the
+    <citetitle>&sls; Deployment</citetitle> and
+    <citetitle>Administration</citetitle> guides at
+    <link xlink:href="https://documentation.suse.com/sles/15-SP2/"/>.
+   </para>
+  </sect2>
+ </sect1>
+</chapter>

@@ -4,8 +4,8 @@
 ## ----------------------------
 ##
 ## Basics
-MAIN="art_sles_rpi_quick.xml"
-ROOTID=art-rpiquick
+MAIN="MAIN.SLEDS.xml"
+ROOTID=book-rpi
 
 ## Profiling
 PROFOS="sles"

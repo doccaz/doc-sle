@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+  <!ENTITY productnamearch "<phrase xmlns='http://docbook.org/ns/docbook' role='productname'><phrase os='sles'>&sls; for &arm;</phrase></phrase>">
+  <!ENTITY appliancename "&productnamearch; for the &rpi;">
+  <!ENTITY jeos-firstboot "&jeos; First Boot Assistant">  
+]>
+
+<chapter version="5.0" role="General" 
+  xml:id="cha-rpi-installation"
+  xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>The &rpi; installation</title>
+ <info>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker></dm:bugtracker>
+   <dm:translation>yes</dm:translation>
+  </dm:docmanager>
+ </info>
+
+ <sect1 xml:id="sec-rpi-installation">
+  <title>Installation</title>
+
+<!-- TODO: Compressed or not compressed? -->
+
+  <para>
+   &appliancename; is distributed as XZ-compressed image file for
+   &microsd; cards. This section will guide you through the process of preparing
+   the card for the first boot. If you already have a &microsd; card containing
+   the image, you can skip this section and go straight to
+   <xref linkend="sec-rpi-firstboot"/>.
+  </para>
+
+  <note>
+   <title>SD Card Space Requirements</title>
+   <para>
+    It is recommended to use a card with a capacity of at least 8&nbsp;GB.
+   </para>
+<!--<para>TO DO!!! 8 GB may lead to space issues with btrfs snapshots and
+        has not been tested for SP3. Suggestion: Leave as is and revisit
+        later.</para>-->
+  </note>
+
+  <warning>
+   <title>All Data on the Card will be Lost!</title>
+   <para>
+    By following the procedure below, all data on the SD card will be
+    overwritten and therefore irrevocably lost. Be very careful when choosing
+    the destination device of the image writing process.
+   </para>
+  </warning>
+
+  <sect2 xml:id="sec-rpi-installation-linux">
+   <title>Preparing the Card on Linux</title>
+   <para>
+    Before and after you plug in the SD card, run the <command>lsblk</command>
+    command. Between the two runs of <command>lsblk</command>, there should be
+    a difference of one or more lines. The first column and first row is the
+    name of the node representing the SD card in your system. To write the
+    image to the card, use the <command>dd</command> command:
+   </para>
+<screen>xz -cd <replaceable>IMAGE</replaceable> | dd of=/dev/<replaceable>SDCARDDEV</replaceable> bs=4096</screen>
+   <example xml:id="ex-rpi-installation-dd">
+    <title>Writing the Image to the Card using <command>dd</command></title>
+    <para>
+     This command decompresses the image
+     <literal>SLES&product-ga;-SP&product-sp;-JeOS.aarch64-&product-ga;.&product-sp;-RaspberryPi-GM.raw.xz</literal> to the SD
+     card <literal>mmcblk0</literal>.
+    </para>
+<screen>&prompt.user;xz -cd SLES&product-ga;-SP&product-sp;-JeOS.aarch64-&product-ga;.&product-sp;-RaspberryPi-GM.raw.xz | sudo dd of=/dev/mmcblk0 bs=4096 iflag=fullblock status=progress</screen>
+   </example>
+  </sect2>
+
+  <sect2 xml:id="sec-rpi-installation-windows">
+   <title>Preparing the Card on &mswin; Operating Systems</title>
+   <para>
+    The following steps will guide you through the installation of the image
+    onto the SD card on &mswinreg; operating systems. You need to meet
+    these prerequisites:
+   </para>
+   <itemizedlist>
+    <listitem>
+     <para>
+      Latest available image of &appliancename;
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Easy 7-Zip from
+      <link xlink:href="http://www.e7z.org/" />
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Win32 Disk Imager from
+      <link xlink:href="http://sourceforge.net/projects/win32diskimager/" />
+     </para>
+    </listitem>
+   </itemizedlist>
+   <procedure xml:id="pro-rpi-installation-windows">
+    <step>
+     <para>
+      Open the downloaded image using Easy 7-Zip. Extract the file content into
+      a directory with sufficient free space.
+     </para>
+     <informalfigure>
+      <mediaobject>
+       <imageobject>
+        <imagedata width="80%" fileref="rpi_image_7z.png"/>
+       </imageobject>
+       <textobject><phrase>7zip extraction dialog</phrase>
+       </textobject>
+      </mediaobject>
+     </informalfigure>
+    </step>
+    <step>
+     <para>
+      Run Win32 Disk Imager and select the extracted file as <guimenu>Image
+      File</guimenu>. Then, choose the correct drive letter as
+      <guimenu>Device</guimenu>. Click <guimenu>Write</guimenu> to start the
+      procedure.
+     </para>
+     <informalfigure>
+      <mediaobject>
+       <imageobject>
+        <imagedata width="80%" fileref="rpi_image_win32.png"/>
+       </imageobject>
+       <textobject><phrase>Win32 Disk Imager Writing Process</phrase>
+       </textobject>
+      </mediaobject>
+     </informalfigure>
+     <note>
+      <title>Finding the correct device</title>
+      <para>
+       If you are unsure which drive letter to choose from in the list, remove
+       the SD card and run Win32 Disk Imager again. The option that disappeared
+       is the right target device.
+      </para>
+     </note>
+    </step>
+   </procedure>
+  </sect2>
+
+  <sect2 xml:id="sec-rpi-installation-macos">
+   <title>Preparing the Card on &macos;</title>
+   <para>
+    The following steps will guide you through the installation of the image
+    onto the SD card on &macosreg;. You need to meet these prerequisites:
+   </para>
+   <itemizedlist>
+    <listitem>
+     <para>
+      Latest available image of &appliancename;
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      The Unarchiver from
+      <link xlink:href="http://unarchiver.c3.cx/unarchiver" />
+     </para>
+    </listitem>
+   </itemizedlist>
+   <procedure xml:id="pro-rpi-installation-macos">
+    <step>
+     <para>
+      Open Finder at the location where the downloaded image is stored. Use the
+      <guimenu>Open With</guimenu> selection to choose
+      <emphasis role="strong">The Unarchiver</emphasis> instead of the default
+      <emphasis role="strong"
+              >Archive</emphasis> utility and
+      extract the content into a directory with sufficient free space.
+     </para>
+     <informalfigure>
+      <mediaobject>
+       <imageobject>
+        <imagedata width="80%" fileref="rpi_image_macos_sles12sp3.jpg"/>
+       </imageobject>
+       <textobject><phrase>Open the Image with The Unarchiver</phrase>
+       </textobject>
+      </mediaobject>
+     </informalfigure>
+    </step>
+    <step>
+     <para>
+      Open a Terminal window and change into the destination directory of the
+      uncompressed image. Enter <command>diskutil list</command> before and
+      after the SD card is inserted to find out which device to use.
+     </para>
+    </step>
+    <step>
+     <para>
+      Run <command>diskutil unmountDisk
+      <replaceable>/dev/diskX</replaceable></command>, where X is the disk
+      number from the previous step.
+     </para>
+    </step>
+    <step>
+     <para>
+      Run <command>sudo dd bs=4096 if=<replaceable>imageFile.raw</replaceable>
+      of=/dev/disk<replaceable>X</replaceable></command>, where <replaceable>X</replaceable> is the disk
+      number and <replaceable>imageFile.raw</replaceable> is the name of the uncompressed image.
+     </para>
+<screen>&prompt.sudo;dd bs=4096 if=SLES&product-ga;-SP&product-sp;-JeOS.aarch64-&product-ga;.&product-sp;-RaspberryPi-GM.raw.xz of=/dev/disk4
+Password:
+5550+0 records in
+5550+0 records out
+5819596800 bytes transferred in 1131.796649 secs (5141910 bytes/sec)
+          </screen>
+    </step>
+    <step>
+     <para>
+      Now unmount the disk (which is now labelled <guimenu>EFI</guimenu>) as
+      usual.
+     </para>
+    </step>
+   </procedure>
+  </sect2>
+ </sect1>
+</chapter>

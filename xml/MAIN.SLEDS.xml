@@ -104,6 +104,8 @@
 <xi:include os="sles" href="book_sle_virtualization.xml"/>
 <!-- Docker -->
 <xi:include os="sles" href="book_sles_docker.xml"/>
+
+<xi:include href="1_book_rpi_test.xml"/>
 <!-- ##################################################################### -->
 <!-- Quick Starts                                                            -->
 <!--                                                                       -->

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+  <!ENTITY productnamearch "<phrase xmlns='http://docbook.org/ns/docbook' role='productname'><phrase os='sles'>&sls; for &arm;</phrase></phrase>">
+  <!ENTITY appliancename "&productnamearch; for the &rpi;">
+  <!ENTITY jeos-firstboot "&jeos; First Boot Assistant">  
+]>
+
+<chapter version="5.0" role="General" 
+  xml:id="cha-rpi-documentation"
+  xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>The &rpi; installation</title>
+ <info>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
+   <dm:bugtracker></dm:bugtracker>
+   <dm:translation>yes</dm:translation>
+  </dm:docmanager>
+ </info>
+
+ <sect1 xml:id="sec-rpi-documentation">
+  <title>Product Documentation</title>
+
+  <para>
+   This introduction only covered the most basic tasks.
+  </para>
+
+  <sect2 xml:id="sec-rpi-documentation-sle">
+   <title>Product Documentation</title>
+   <para>
+    You can find the complete documentation for &productnamearch;
+    &productnumber; at <link xlink:href="https://documentation.suse.com/"/>.
+   </para>
+   <note>
+    <title>Applicability of Product Documentation</title>
+    <para>
+     Not all content in the product documentation applies to &productnamearch;
+     on the &rpi;, because the &rpi; differs significantly from other hardware
+     platforms.
+    </para>
+   </note>
+  </sect2>
+
+  <sect2 xml:id="sec-rpi-documentation-forum">
+   <title>&suse; Forums</title>
+   <para>
+    A valid and activated subscription entitles you to receive bug and security
+    fixes, feature updates, and technical assistance from &suse;'s support
+    organization. Learn more at
+    <link xlink:href="https://www.suse.com/support/" />.
+    Via the &scc; at <link xlink:href="&sccurl;" />
+    you can open an incident.
+   </para>
+   <para>
+    In addition, &suse; has provided conversation forums where you can get
+    answers to questions. Go to
+    <link xlink:href="https://forums.suse.com/" />.
+    Under the main forum category <emphasis role="strong">SUSE Linux Enterprise
+    Server</emphasis> select the sub-forum <emphasis role="strong">SLES for
+    Raspberry Pi</emphasis>.
+   </para>
+   <important>
+    <title>Forums Are No Official Support Channel</title>
+    <para>
+     The &suse; Forum is <emphasis role="strong">no official</emphasis> support
+     channel from &suse;. The individual articles or statements were contributed
+     voluntarily by community members and users of the respective products.
+     &suse; cannot verify either that the actions described in the articles do
+     what they claim to do or that they do not have unintended consequences.
+     Therefore, neither SUSE LLC, its affiliates, nor the authors may be held
+     liable for possible errors or the consequences thereof.
+    </para>
+    <para>
+     Visit
+     <link xlink:href="https://www.suse.com/support/" />
+     for more information about official support options.
+    </para>
+   </important>
+  </sect2>
+ </sect1>
+</chapter>
