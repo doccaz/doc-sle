@@ -80,6 +80,10 @@
     <literal>&zseries;</literal> and <literal>&power;</literal>. The arrows
     mark the beginning and the end of the text block.
    </para>
+   <para arch="aarch64">
+    This paragraph is only relevant for the &aarch64; architecture.
+    The arrows mark the beginning and the end of the text block.
+   </para>
   </listitem>
   <listitem>
    <para>

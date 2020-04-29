@@ -93,8 +93,8 @@
       network connection. <phrase os="sles;sled">For details, see:</phrase>
      </para>
      <itemizedlist os="sles;sled">
-      <listitem>
-       <para arch="x86_64">
+      <listitem arch="x86_64">
+       <para>
         <xref linkend="sec-x86-media"/>
        </para>
       </listitem>
