@@ -65,13 +65,13 @@
    <keycap>F12</keycap>), you can specify additional options
    to pass to the installation routines without having to know the detailed
    syntax of these parameters (see <xref
-   linkend="cha-boot-parameters"/>). A detailed
+   linkend="cha-boot-parameters"/>). <phrase arch="x86_64,aarch">A detailed
    description of the available function keys is available in <xref
-   linkend="sec-boot-parameters-screen"/>.
+   linkend="sec-boot-parameters-screen"/>.</phrase>
   </para>
  </sect1>
 
- <sect1 xml:id="sec-boot-parameters-start-x86-64" arch="x86_64">
+ <sect1 xml:id="sec-boot-parameters-start-x86-64" arch="x86_64,aarch">
   <title>PC (&amd64;/&intel64;/&arm64;)</title>
   <para>
    This section describes changing the boot parameters for &amd64;, &intel64;,
