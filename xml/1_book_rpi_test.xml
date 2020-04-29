@@ -38,7 +38,7 @@
  <xi:include href="rpi_documentation.xml"/>
  <xi:include href="rpi_legal.xml"/>
  <xi:include href="rpi_trademarks.xml"/>
- <xi:include href="rpi_usage.xml "/>
+ <xi:include href="rpi_usage.xml"/>
 <!-- <xi:include href=""/>-->
  
 </book>
