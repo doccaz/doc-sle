@@ -50,7 +50,7 @@
    <para>
     After a few minutes, the &jeos-firstboot; will lead you through the initial system setup.
    </para>
-   <procedure xml:id="pro-rpi-firstboot-jeos">
+   <procedure xml:id="pro-rpi-rpi-firstboot-jeos">
     <step>
      <para>
       Note that this minimized JeOS image comes without language selection.
