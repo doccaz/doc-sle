@@ -32,6 +32,7 @@
 <!-- Storage -->
 <!-- Hardening -->
 <!-- Virtualization -->
+<!-- Raspberry Pi -->
 <!-- ##################################################################### -->
 <!-- Quick Starts                                                          -->
 <!--                                                                       -->
@@ -104,8 +105,8 @@
 <xi:include os="sles" href="book_sle_virtualization.xml"/>
 <!-- Docker -->
 <xi:include os="sles" href="book_sles_docker.xml"/>
-
-<xi:include href="1_book_rpi_test.xml"/>
+<!-- Raspberry Pi -->
+<xi:include os="sles" href="book_sles_rpi.xml"/>
 <!-- ##################################################################### -->
 <!-- Quick Starts                                                            -->
 <!--                                                                       -->

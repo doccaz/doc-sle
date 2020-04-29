@@ -13,7 +13,7 @@
   xmlns="http://docbook.org/ns/docbook"
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>The &rpi; installation</title>
+ <title>Legal Notices</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker></dm:bugtracker>
@@ -22,7 +22,7 @@
  </info>
 
  <sect1 xml:id="sec-rpi-documentation-legal">
-  <title>Legal Notice</title>
+  <title>Legal Notice and Trademarks</title>
 
   <para>
    Copyright &copy;2006–2020 SUSE LLC and contributors. All rights reserved.
@@ -44,6 +44,18 @@
    mentioned in this document may be trademarks or registered trademarks of
    their respective owners.
   </para>
+  <para>
+    All third party trademarks are the property of their respective
+    owners. Trademark symbols (&reg;, &trade; etc.) denote trademarks
+    of &suse; and its affiliates. Asterisks (*) denote third-party
+    trademarks.
+  </para>
+  <!-- trademark use rules for third-party products. cschroder April 2020
+  https://resources.mipi.org/blog/protocols-phys-and-the-mipi-alliance-ipr-terms
+https://www.arm.com/company/policies/trademarks/arm-trademark-list/cortex-trademark
+https://www.hdmi.org/requestform/ClickRequestAsync?docId=42
+https://www.bluetooth.com/develop-with-bluetooth/marketing-branding/
+  -->
 
   <para>
    All information found in this book has been compiled with utmost attention

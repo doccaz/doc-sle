@@ -13,7 +13,7 @@
   xmlns="http://docbook.org/ns/docbook"
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>The &rpi; installation</title>
+    <title>Documentation and Support</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker></dm:bugtracker>
@@ -25,7 +25,9 @@
   <title>Product Documentation</title>
 
   <para>
-   This introduction only covered the most basic tasks.
+   This guide covers installing &sle; on &rpi;. For information on using &sle; on
+   &rpi;, such as system and network administration, storage, hardening and security, 
+   containers, and other tasks, and for support options, refer to the following sections. 
   </para>
 
   <sect2 xml:id="sec-rpi-documentation-sle">

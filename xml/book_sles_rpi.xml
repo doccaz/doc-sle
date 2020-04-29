@@ -6,6 +6,9 @@
 [
   <!ENTITY % entities SYSTEM "entity-decl.ent">
     %entities;
+  <!ENTITY productnamearch "<phrase xmlns='http://docbook.org/ns/docbook' role='productname'><phrase os='sles'>&sls; for &arm;</phrase></phrase>">
+  <!ENTITY appliancename "&productnamearch; for the &rpi;">
+  <!ENTITY jeos-firstboot "&jeos; First Boot Assistant">
 ]>
 <?xml-model href="/usr/share/xml/geekodoc/rng/geekodoc5-flat.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <book version="5.0" xml:lang="en" xml:id="book-rpi"
@@ -18,16 +21,23 @@
     <dm:assignee>fs@suse.com</dm:assignee>
    </dm:bugtracker>
   </dm:docmanager>
-  <title>&rpi;</title>
+  <title>Installing &sle; on &rpi;</title>
   <productname>&productname;</productname>
   <productnumber>&productnumber;</productnumber>
+  <author><personname><firstname>Fabian</firstname><surname>Vogt, Release Engineer, SUSE</surname></personname>
+  </author>
+  <author><personname><firstname>Jay</firstname><surname>Kruemcke, Product Manager, SUSE</surname></personname>
+  </author>
+  <author><personname><firstname>Andreas</firstname><surname>Faerber, Project Manager, SUSE</surname></personname>
+  </author>  
   <date>
    <?dbtimestamp format="B d, Y" ?>
   </date>
   <xi:include href="common_copyright_gfdl.xml"/>
   <abstract>
    <para>
-&rpi; does cool stuff
+    This guide contains an overview of &productnamearch; on the &rpireg;
+    platform and will guide you through the setup procedure.
    </para>
   </abstract>
  </info>
@@ -35,10 +45,8 @@
  <xi:include href="rpi_installation.xml"/>
  <xi:include href="rpi_firstboot.xml"/>
  <xi:include href="rpi_configuration.xml"/>
+ <xi:include href="rpi_usage.xml"/> 
  <xi:include href="rpi_documentation.xml"/>
  <xi:include href="rpi_legal.xml"/>
- <xi:include href="rpi_trademarks.xml"/>
- <xi:include href="rpi_usage.xml"/>
-<!-- <xi:include href=""/>-->
  
 </book>

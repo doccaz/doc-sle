@@ -13,7 +13,7 @@
   xmlns="http://docbook.org/ns/docbook"
   xmlns:xi="http://www.w3.org/2001/XInclude"
   xmlns:xlink="http://www.w3.org/1999/xlink">
- <title>The &rpi; installation</title>
+ <title>Preparing the Installation Medium</title>
  <info>
   <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager">
    <dm:bugtracker></dm:bugtracker>
@@ -22,7 +22,7 @@
  </info>
 
  <sect1 xml:id="sec-rpi-installation">
-  <title>Installation</title>
+  <title>Copying the &rpi; Image File to a &microsd; Card</title>
 
 <!-- TODO: Compressed or not compressed? -->
 
